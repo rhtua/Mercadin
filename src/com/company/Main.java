@@ -31,7 +31,6 @@ public class Main {
         System.out.println("                        LOGIN                          ");
         System.out.println();
         System.out.println();
-        System.out.println();
         System.out.println("                       USUÁRIO:                          ");
         System.out.println();
         usuarioLogin = scanner.nextLine();
@@ -47,13 +46,35 @@ public class Main {
         }
 
         if(userExists){
-            System.out.println("USUARIO LOGADO");
+            System.out.println("              USUARIO LOGADO");
         }else
         {
-            System.out.println("USUARIO NÃO EXISTE");
+            System.out.println("            USUARIO NÃO EXISTE");
         }
 
 
+
+    }
+
+    public int Menu(){
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("█▀▄▀█ ░▀░ █▀▀▄ ░▀░ 　 █▀▄▀█ █▀▀ █▀▀█ █▀▀ █▀▀█ █▀▀▄ █▀▀█");
+        System.out.println("█░▀░█ ▀█▀ █░░█ ▀█▀ 　 █░▀░█ █▀▀ █▄▄▀ █░░ █▄▄█ █░░█ █░░█");
+        System.out.println("▀░░░▀ ▀▀▀ ▀░░▀ ▀▀▀ 　 ▀░░░▀ ▀▀▀ ▀░▀▀ ▀▀▀ ▀░░▀ ▀▀▀░ ▀▀▀▀");
+        System.out.println();
+        System.out.println("▒█▀▀▀ ▒█▀▀▀ ▒█░░░ ▀█▀ ▒█▀▀█ ▀█▀ ▒█▀▀▄ ░█▀▀█ ▒█▀▀▄ ▒█▀▀▀ ");
+        System.out.println("▒█▀▀▀ ▒█▀▀▀ ▒█░░░ ▒█░ ▒█░░░ ▒█░ ▒█░▒█ ▒█▄▄█ ▒█░▒█ ▒█▀▀▀");
+        System.out.println("▒█░░░ ▒█▄▄▄ ▒█▄▄█ ▄█▄ ▒█▄▄█ ▄█▄ ▒█▄▄▀ ▒█░▒█ ▒█▄▄▀ ▒█▄▄▄");
+        System.out.println();
+        System.out.println("#######################################################");
+        System.out.println();
+        System.out.println();
+        System.out.println("                 0 - VENDA                             ");
+        System.out.println("                 1 - CONTROLE DE ESTOQUE               ");
+        System.out.println("                 2 - CADASTRO                          ");
+        System.out.println();
+        return scanner.nextInt();
 
     }
 }
