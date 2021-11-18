@@ -13,11 +13,6 @@ import java.util.Scanner;
 
 public class Main {
 
-    static Generico base = new Generico();
-    static ControleEstoque controleEstoque = new ControleEstoque();
-    static Cadastro cadastro = new Cadastro();
-    static Vendas vendas = new Vendas();
-
     public static void main(String[] args) {
 
         List<Pessoa> bancoPessoa = new ArrayList<>();
@@ -29,19 +24,21 @@ public class Main {
 
         Login(bancoPessoa);
 
-        var opcaoMenu = MenuPrincipal();
+        int opcaoMenu;
 
-        switch (opcaoMenu) {
-            case 0 -> Vendas.MenuVenda( bancoVendas, bancoProduto);
-            case 1 -> {
-                ControleEstoque.MenuControleEstoque( bancoProduto);
+        do {
+            opcaoMenu = MenuPrincipal();
+
+            switch (opcaoMenu) {
+                case 0 -> Vendas.MenuVenda(bancoVendas, bancoProduto);
+                case 1 -> ControleEstoque.MenuControleEstoque(bancoProduto);
+                case 2 -> Cadastro.MenuCadastro(bancoPessoa);
             }
-            case 2 -> Cadastro.MenuCadastro( bancoPessoa);
-        }
+        }while (opcaoMenu != 3);
     }
 
     public static int MenuPrincipal(){
-        List<String> menu = List.of("0 - VENDA", "1 - CONTROLE DE ESTOQUE", "2 - CADASTRO" );
+        List<String> menu = List.of("0 - VENDA", "1 - CONTROLE DE ESTOQUE", "2 - CADASTRO", "3 - SAIR" );
         Generico.cls();
         return Generico.MenuBase(menu);
     }
